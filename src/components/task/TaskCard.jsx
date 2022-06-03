@@ -1,6 +1,6 @@
 import React from 'react'
 import TaskCardDeleteButton from './TaskCardDeleteButton'
-import TaskCardInput from './TaskCardInput'
+import TaskAddInput from './TaskAddInput'
 import TaskCardTitle from './TaskCardTitle'
 import Tasks from './Tasks'
 
@@ -9,7 +9,7 @@ function TaskCard() {
     <div className="taskCard">
       <TaskCardTitle />
       <TaskCardDeleteButton />
-      <TaskCardInput />
+      <TaskAddInput />
       <Tasks />
     </div>
   )
