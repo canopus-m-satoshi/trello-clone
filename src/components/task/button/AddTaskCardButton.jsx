@@ -1,7 +1,7 @@
 import React from 'react'
 
 function AddTaskCardButton() {
-  return <div>AddTaskCardButton</div>
+  return <div></div>
 }
 
 export default AddTaskCardButton
