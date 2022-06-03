@@ -21,6 +21,7 @@ header {
 .app {
   background: url(../src/images/mountain.jpg);
   background-repeat: no-repeat;
+  filter: grayscale(80%);
   height: 100vh;
 }
 
@@ -30,4 +31,19 @@ header {
   margin: 10px 1%;
   background-color: rgb(228, 228, 228);
   border-radius: 5px;
+}
+
+.taskCardTitleInputArea {
+  margin-bottom: 10px;
+  width: 30%;
+  cursor: pointer;
+}
+
+.taskCardTitleInput {
+  width: 80px;
+  font-size: 1.1rem;
+  padding: 4px 6px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
 }
