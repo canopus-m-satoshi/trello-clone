@@ -1,10 +1,11 @@
 import React from 'react'
+import Task from './Task'
 
-function Tasks({ inputText, taskList }) {
+function Tasks({ taskList }) {
   return (
     <div>
       {taskList.map((task, index) => (
-        <div key={index}>{task.text}</div>
+        <Task task={task} key={index} />
       ))}
     </div>
   )
