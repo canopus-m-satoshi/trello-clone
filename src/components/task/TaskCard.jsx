@@ -6,7 +6,7 @@ import Tasks from './Tasks'
 
 function TaskCard() {
   const [inputText, setInputText] = useState('')
-  const [taskText, setTaskText] = useState()
+  const [taskList, setTaskList] = useState([])
 
   return (
     <div className="taskCard">
@@ -15,10 +15,10 @@ function TaskCard() {
       <TaskAddInput
         inputText={inputText}
         setInputText={setInputText}
-        taskText={taskText}
-        setTaskText={setTaskText}
+        taskList={taskList}
+        setTaskList={setTaskList}
       />
-      <Tasks />
+      <Tasks inputText={inputText} taskList={taskList} />
     </div>
   )
 }

@@ -1,8 +1,10 @@
 import React from 'react'
 
-function TaskCardInput({ inputText, setInputText, taskText, setTaskText }) {
+function TasAddInput({ inputText, setInputText, taskList, setTaskList }) {
   const handleSubmit = (e) => {
     e.preventDefault()
+    setTaskList([...taskList, { text: inputText }])
+    setInputText('')
   }
 
   const handleChange = (e) => {
@@ -17,10 +19,11 @@ function TaskCardInput({ inputText, setInputText, taskText, setTaskText }) {
           placeholder="add a task"
           className="taskAddInput"
           onChange={handleChange}
+          value={inputText}
         />
       </form>
     </div>
   )
 }
 
-export default TaskCardInput
+export default TasAddInput
