@@ -9,10 +9,8 @@ function Task({ task, taskList, setTaskList }) {
 
   return (
     <div className="taskBox">
-      ß<p className="taskText">{task.text}</p>
-      <button
-        className="taskTrashButton"
-        onCßlick={() => handleDelete(task.id)}>
+      <p className="taskText">{task.text}</p>
+      <button className="taskTrashButton" onClick={() => handleDelete(task.id)}>
         <FontAwesomeIcon icon={faTrash} />
       </button>
     </div>
