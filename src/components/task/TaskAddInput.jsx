@@ -7,7 +7,13 @@ function TasAddInput({ inputText, setInputText, taskList, setTaskList }) {
       return
     }
 
-    setTaskList([...taskList, { id: taskList.length, text: inputText }])
+    setTaskList([
+      ...taskList,
+      {
+        id: taskList.length, // 配列の長さをIDとする
+        text: inputText,
+      },
+    ])
     setInputText('')
   }
 

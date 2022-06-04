@@ -6,7 +6,6 @@ function TaskCardTitle() {
 
   const handleClick = () => {
     setIsClick(true)
-    console.log(isClick)
   }
 
   const handleChange = (e) => {
