@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Draggable } from 'react-beautiful-dnd'
 
-function Task({ task, taskList, setTaskList }) {
+function Task({ index, task, taskList, setTaskList }) {
   const handleDelete = (id) => {
     setTaskList(taskList.filter((task) => task.id !== id))
   }
 
   return (
-    <Draggable index={task.id} draggableId={task.draggableId}>
+    <Draggable index={index} draggableId={task.draggableId}>
       {(provided) => (
         <div
           className="taskBox"
-          key={task.id}
+          key={index}
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}>
