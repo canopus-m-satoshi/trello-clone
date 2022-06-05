@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { Draggable } from 'react-beautiful-dnd'
 
 function Task({ task, taskList, setTaskList }) {
   const handleDelete = (id) => {
@@ -8,12 +9,23 @@ function Task({ task, taskList, setTaskList }) {
   }
 
   return (
-    <div className="taskBox">
-      <p className="taskText">{task.text}</p>
-      <button className="taskTrashButton" onClick={() => handleDelete(task.id)}>
-        <FontAwesomeIcon icon={faTrash} />
-      </button>
-    </div>
+    <Draggable index={task.id} draggableId={task.draggableId}>
+      {(provided) => (
+        <div
+          className="taskBox"
+          key={task.id}
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}>
+          <p className="taskText">{task.text}</p>
+          <button
+            className="taskTrashButton"
+            onClick={() => handleDelete(task.id)}>
+            <FontAwesomeIcon icon={faTrash} />
+          </button>
+        </div>
+      )}
+    </Draggable>
   )
 }
 

@@ -11,6 +11,7 @@ function TasAddInput({ inputText, setInputText, taskList, setTaskList }) {
       ...taskList,
       {
         id: taskList.length, // 配列の長さをIDとする
+        draggableId: `task-${taskList.length}`,
         text: inputText,
       },
     ])
