@@ -1,7 +1,10 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 function TasAddInput({ inputText, setInputText, taskList, setTaskList }) {
   const handleSubmit = (e) => {
+    const taskID = uuidv4()
+
     e.preventDefault()
     if (inputText === '') {
       return
@@ -10,8 +13,8 @@ function TasAddInput({ inputText, setInputText, taskList, setTaskList }) {
     setTaskList([
       ...taskList,
       {
-        id: taskList.length, // 配列の長さをIDとする
-        draggableId: `task-${taskList.length}`,
+        id: taskID, // 配列の長さをIDとする
+        draggableId: `task-${taskID}`,
         text: inputText,
       },
     ])
